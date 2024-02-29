@@ -1,0 +1,99 @@
+<!-- Contenido del archivo index.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me Amas?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #ffccff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ff66b2;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .opciones {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            margin-top: 20px;
+        }
+
+        .opcion {
+            padding: 15px 30px;
+            background-color: #ff66b2;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .opcion:hover {
+            background-color: #6f52ed;
+        }
+
+        .si {
+            animation: crecer 2s ease-out forwards;
+        }
+
+        .no {
+            animation: mover 2s ease-out forwards;
+        }
+
+        @keyframes crecer {
+            to {
+                transform: scale(1.5);
+            }
+        }
+
+        @keyframes mover {
+            to {
+                transform: translateX(100vw);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>¿Me Amas?</h1>
+<img src="tu_imagen.jpg" alt="Imagen Central">
+
+<div class="opciones">
+    <a href="si_muy_grande.html" class="opcion si">Sí</a>
+    <a href="javascript:void(0);" class="opcion no" onclick="mover()">No</a>
+</div>
+
+<script>
+    function mover() {
+        document.querySelector('.no').style.animation = 'mover 2s forwards';
+        document.querySelector('.no').setAttribute('onclick', 'return false;');
+    }
+</script>
+
+</body>
+</html>
